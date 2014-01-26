@@ -8,10 +8,11 @@ using System.Web.Security;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
+using WebMatrix.WebData;
 
 namespace MongoDB.Web.Providers
 {
-    public class MongoDBMembershipProvider : MembershipProvider
+    public class MongoDBMembershipProvider : ExtendedMembershipProvider
     {
         private bool enablePasswordReset;
         private bool enablePasswordRetrieval;
@@ -491,5 +492,79 @@ namespace MongoDB.Web.Providers
         }
 
         #endregion
+
+        #region ExtendedMembershipProvider
+
+        public override bool ConfirmAccount(string accountConfirmationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool ConfirmAccount(string userName, string accountConfirmationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string CreateAccount(string userName, string password, bool requireConfirmationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string CreateUserAndAccount(string userName, string password, bool requireConfirmation, System.Collections.Generic.IDictionary<string, object> values)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool DeleteAccount(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string GeneratePasswordResetToken(string userName, int tokenExpirationInMinutesFromNow)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override System.Collections.Generic.ICollection<OAuthAccountData> GetAccountsForUser(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override DateTime GetCreateDate(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override DateTime GetLastPasswordFailureDate(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override DateTime GetPasswordChangedDate(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int GetPasswordFailuresSinceLastSuccess(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int GetUserIdFromPasswordResetToken(string token)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool IsConfirmed(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool ResetPasswordWithToken(string token, string newPassword)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion ExtendedMembershipProvider
     }
 }
